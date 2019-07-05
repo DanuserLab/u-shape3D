@@ -6,6 +6,6 @@ This suite of software was designed to detect morphological motifs, such as bleb
 
 It is associated with the paper, ***Robust detection of subcellular morphological motifs in 3D microscopy images***, written by Meghan K. Driscoll, Erik S. Welf, Andrew R. Jamieson, Kevin M. Dean, Tadamoto Isogai, Reto Fiolka, and [Gaudenz Danuser](https://www.utsouthwestern.edu/labs/danuser/). 
 
-For more information, please read the User Guide, which should have come bundled with the software.
+For more information, please read the [User Guide](doc/Morphology3DPackage.pdf), which should have come bundled with the software.
 
 ![Alt Text](doc/BlebbingCells.png?raw=true)
