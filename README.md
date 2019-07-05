@@ -1,6 +1,6 @@
 # Morphology3D
-Software for 3D Morphological Motif Detection
-May 23, 2019
+### Software for 3D Morphological Motif Detection
+#### May 23, 2019
 
 This suite of software was designed to detect morphological motifs, such as blebs, filopodia, and lamellipodia, from 3D images of surfaces, particularly images of cell surfaces.
 
