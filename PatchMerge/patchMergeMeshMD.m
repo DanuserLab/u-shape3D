@@ -114,13 +114,13 @@ for c = p.chanList
         disp(['      image ' num2str(t) ' (channel ' num2str(c) ')'])
         
         % load the surface, curvature and patch segmentation data
-        sStruct = load(sprintf(surfacePath, c, t));
-        cStruct = load(sprintf(curvaturePath, c, t));
-        cuStruct = load(sprintf(curvatureUnsmoothedPath, c, t));
-        gStruct = load(sprintf(gaussPath, c, t));
-        nStruct = load(sprintf(neighborsPath, c, t));
-        csStruct = load(sprintf(surfaceSegPath, c, t));
-        psStruct = load(sprintf(pairStatsPath, c, t));
+        sStruct = load(sprintfPath(surfacePath, c, t));
+        cStruct = load(sprintfPath(curvaturePath, c, t));
+        cuStruct = load(sprintfPath(curvatureUnsmoothedPath, c, t));
+        gStruct = load(sprintfPath(gaussPath, c, t));
+        nStruct = load(sprintfPath(neighborsPath, c, t));
+        csStruct = load(sprintfPath(surfaceSegPath, c, t));
+        psStruct = load(sprintfPath(pairStatsPath, c, t));
         
         % merge patches using an SVM
         surfaceSegmentPatchMerge = mergePatchesSVM(sStruct.surface, csStruct.surfaceSegment, psStruct.pairStats, svmStruct.inModelAll, svmStruct.SVMmodelAll, nStruct.neighbors, cStruct.meanCurvature, cuStruct.meanCurvatureUnsmoothed, gStruct.gaussCurvatureUnsmoothed, MD.pixelSize_);

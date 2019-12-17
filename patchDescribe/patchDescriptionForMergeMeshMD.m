@@ -98,12 +98,12 @@ for c = p.chanList
         disp(['   image ' num2str(t) ' (channel ' num2str(c) ')'])
         
         % load the surface, curvature and patch segmentation data
-        sStruct = load(sprintf(surfacePath, c, t));
-        cStruct = load(sprintf(curvaturePath, c, t));
-        cuStruct = load(sprintf(curvatureUnsmoothedPath, c, t));
-        gStruct = load(sprintf(gaussPath, c, t));
-        nStruct = load(sprintf(neighborsPath, c, t));
-        csStruct = load(sprintf(surfaceSegPath, c, t));
+        sStruct = load(sprintfPath(surfacePath, c, t));
+        cStruct = load(sprintfPath(curvaturePath, c, t));
+        cuStruct = load(sprintfPath(curvatureUnsmoothedPath, c, t));
+        gStruct = load(sprintfPath(gaussPath, c, t));
+        nStruct = load(sprintfPath(neighborsPath, c, t));
+        csStruct = load(sprintfPath(surfaceSegPath, c, t));
         
         % calculate statistics for adjacent pairs of patches 
         patchPairs = findAdjacentPatchPairs(csStruct.surfaceSegment, nStruct.neighbors);

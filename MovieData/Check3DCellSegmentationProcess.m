@@ -79,7 +79,7 @@ classdef Check3DCellSegmentationProcess < MaskProcess & NonSingularProcess
             %% WIP - fix volume size change issue?
             zp = floor((size(stack3D,3)-obj.owner_.zSize_)/2)+1;
             xyp = floor((size(stack3D,1)-obj.owner_.imSize_(1))/2);
-            mask = stack3D(xyp:(size(stack3D,2)-xyp),xyp:(size(stack3D,2)-xyp),zp:(size(stack3D,3)-zp));
+            mask = stack3D(xyp:(size(stack3D,1)-xyp),xyp:(size(stack3D,2)-xyp),zp:(size(stack3D,3)-zp));
             
             mask = mask(:, :, p.iZ+1);
 %             mask = stack3D(:,:,p.iZ-zp);
