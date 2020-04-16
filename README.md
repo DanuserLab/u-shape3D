@@ -1,4 +1,4 @@
-# Morphology3D
+# u-shape3D
 ### Software for 3D Morphological Motif Detection
 ##### May 23, 2019
 
