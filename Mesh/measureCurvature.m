@@ -29,7 +29,9 @@ function [neighbors, meanCurvatureSmoothed, meanCurvatureUnsmoothed, gaussCurvat
 
 % construct a graph of the faces
 try % this section is buggy because of irregularities in the mesh
+    tic;
     neighbors = findEdgesFaceGraph(mesh); % construct an edge list for the dual graph where the faces are nodes
+    toc;
 catch
     disp('         Warning: The graph could not be constructed!')
     neighbors = [];
@@ -37,8 +39,11 @@ catch
 end
     
 % median filter the curvature in real space
+tic;
 medianFilteredCurvature = medianFilterKD(mesh, meanCurvatureUnsmoothed, medianFilterRadius);
+toc;
 
+tic;
 % check for lingering infinities and replace them
 if max(medianFilteredCurvature) > 1000  
     maxFiniteMeanCurvature = max(medianFilteredCurvature.*isfinite(medianFilteredCurvature));
@@ -52,6 +57,9 @@ end
 
 % replace any NaN's
 medianFilteredCurvature(~isfinite(medianFilteredCurvature)) = 0;
+toc;
 
 % diffuse curvature on the mesh geometry
+tic;
 meanCurvatureSmoothed = smoothDataOnMesh(mesh, neighbors, medianFilteredCurvature, smoothOnMeshIterations);
+toc;

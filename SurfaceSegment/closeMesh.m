@@ -23,13 +23,16 @@ function [closeCenter, closureSurfaceArea, closedMesh, closeRadius] = closeMesh(
 
 
 % find the labels of the faces in the region
-faceIndex = 1:length(watersheds);
-facesInRegion = faceIndex'.*(wLabel==watersheds);
-facesInRegion = facesInRegion(facesInRegion>0);
+
+wLabel_equals_watersheds = wLabel==watersheds;
+faceIndex = (1:length(watersheds))';
+facesInRegion = faceIndex(wLabel_equals_watersheds);
 
 % make an edge list of edges associated with the region
-neighborsRegion = neighbors.*repmat(wLabel==watersheds,1,3);
-edgeList = [facesInRegion, neighborsRegion(neighborsRegion(:,1)>0,1); facesInRegion, neighborsRegion(neighborsRegion(:,2)>0,2); facesInRegion, neighborsRegion(neighborsRegion(:,3)>0,3)];
+neighborsRegion = neighbors.*repmat(wLabel_equals_watersheds,1,3);
+edgeList = [facesInRegion, neighborsRegion(neighborsRegion(:,1)>0,1); ...
+            facesInRegion, neighborsRegion(neighborsRegion(:,2)>0,2); 
+            facesInRegion, neighborsRegion(neighborsRegion(:,3)>0,3)];
 
 % find a list of the neighboring faces
 facesAllNeighbors = setdiff(edgeList(:,2), facesInRegion);
@@ -54,7 +57,7 @@ nVertices = vertexPairs(:,1);
 closeCenter = mean([smoothedSurface.vertices(nVertices,1), smoothedSurface.vertices(nVertices,2), smoothedSurface.vertices(nVertices,3)], 1);
 
 % find the average distance from each edge vertex to the closeCenter
-closeRadius = mean(sqrt(sum((smoothedSurface.vertices(nVertices,:) - repmat(closeCenter, size(smoothedSurface.vertices(nVertices,:),1), 1)).^2, 2)));
+closeRadius = mean(vecnorm(smoothedSurface.vertices(nVertices,:) - repmat(closeCenter, size(smoothedSurface.vertices(nVertices,:),1), 1), 2, 2));
 
 % make a fv (faces-vertices) structure for the region  (note that the vertices are not relabeled and so the structure is large)
 closedMesh.faces = [smoothedSurface.faces(facesInRegion,1), smoothedSurface.faces(facesInRegion,2), smoothedSurface.faces(facesInRegion,3)];
@@ -78,12 +81,17 @@ closureMesh.vertices = closedMesh.vertices;
 closureMesh.faces = newFaces;
 closureSurfaceArea = sum(measureAllFaceAreas(closureMesh));
 
+%{
+[closeCenter, closureSurfaceArea, closedMesh.faces, closedMesh.vertices, closeRadius] = closeMeshcpp(wLabel, smoothedSurface.faces, smoothedSurface.vertices, watersheds, neighbors);
+closureSurfaceArea = sum(measureAllFaceAreas(closedMesh));
+%}
+
+%closureSurfaceArea = sum(measureAllFaceAreas(closureMesh));
+
 % % if the closeCenter is not defined, set it to be the middle of the object
 % if isnan(closeCenter(1))
 %    nVertices = smoothedSurface.faces(facesInRegion(:,1));
 %    closeCenter = mean([smoothedSurface.vertices(nVertices,1), smoothedSurface.vertices(nVertices,2), smoothedSurface.vertices(nVertices,3)], 1); 
 % end
-
-% % Debug code
 % figure
 % patch(closedMesh)

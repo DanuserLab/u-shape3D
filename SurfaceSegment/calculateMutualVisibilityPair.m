@@ -21,16 +21,34 @@ function [mutualVisibility, mutualVisibilityArray] = calculateMutualVisibilityPa
 % 
 % 
 
+%edgesToCheck = edgesToCheck(find(toRemove==0), :);
+%{
+edgesToCheckNew_ = [];
+for p = 1:size(edgesToCheck_,1)
+    if toRemove(p) == 0
+        edgesToCheckNew_ = [edgesToCheckNew_; edgesToCheck(p,:)];
+    end
+end
+isequaln(edgesToCheckNew, edgesToCheckNew_)
+edgesToCheck = edgesToCheckNew;
+%}
 
 % find the faces in each region
 faceIndex = 1:size(mesh.faces,1);
-firstFaces = []; secondFaces = [];
+firstFaces = faceIndex(regionLabels == firstRegionIndices);
+secondFaces = faceIndex(regionLabels == secondRegionIndices);
+%{
+firstFaces_ = []; secondFaces_ = [];
 for f = 1:length(firstRegionIndices)
-    firstFaces = [firstFaces, faceIndex(regionLabels == firstRegionIndices(f))];
+    firstFaces_ = [firstFaces_, faceIndex(regionLabels == firstRegionIndices(f))];
 end
 for f = 1:length(secondRegionIndices)
-    secondFaces = [secondFaces, faceIndex(regionLabels == secondRegionIndices(f))];
+    secondFaces_ = [secondFaces_, faceIndex(regionLabels == secondRegionIndices(f))];
 end
+
+isequal(firstFaces,firstFaces_)
+isequal(secondFaces,secondFaces_)
+%}
 
 % just go through the whole list, and if you run out return 0
 mutualVisibility = 0;
@@ -43,6 +61,7 @@ if local
 else
     localSize = Inf;
 end
+
 mutualVisibilityArray = makeMutVisArray(maxPairLimitMult, localSize, mesh, firstFaces, secondFaces, patchLength, raysPerCompare);
 
 % if the array is partially empty, try again with a larger list of tests
@@ -73,7 +92,6 @@ else
     disp('  found too few rays to compare') % this is more problematic 
 end
 
-
 function mutualVisibilityList = makeMutVisArray(maxPairLimitMult, localSize, mesh, firstFaces, secondFaces, patchLength, raysPerCompare)
 
 % if there are many, many possible rays then subsample the pairs
@@ -97,8 +115,8 @@ pairsList = pairsList(:,1:2);
 % iterate through the ray intersections
 mutualVisibilityList = NaN(1,raysPerCompare);
 rayCount = 0;
+
 for r = 1:size(pairsList,1)
-    
     % find the position of the first face
     verticesFace = mesh.faces(pairsList(r,1),:);
     firstPosition = (mesh.vertices(verticesFace(1),:) + mesh.vertices(verticesFace(2),:) + mesh.vertices(verticesFace(3),:))/3;
@@ -110,7 +128,7 @@ for r = 1:size(pairsList,1)
     % find the direction and length of a ray from the first to the second face
     ray = secondPosition - firstPosition;
     rayLength = sqrt(sum(ray.^2));
-    
+
     % the local line-of-sight condition
     if (rayLength > localSize*patchLength)
         continue
@@ -120,6 +138,7 @@ for r = 1:size(pairsList,1)
     if (rayLength < 2)  
         continue
     end
+
     rayCount = rayCount + 1;
     ray = ray./rayLength;
     
@@ -129,49 +148,14 @@ for r = 1:size(pairsList,1)
     % check every face in the mesh to see if the ray and face intersect using a one-sided ray-triangle intersection algorithm
     firstMatrix = repmat([firstPosition(1) firstPosition(2) firstPosition(3)], size(mesh.faces,1), 1);
     rayMatrix = repmat([ray(1) ray(2) ray(3)], size(mesh.faces,1), 1);
+
     %[intersect, dist] = TriangleRayIntersectionFastOneSided(firstMatrix, rayMatrix, mesh.vertices(mesh.faces(:,2),:), mesh.vertices(mesh.faces(:,1),:), mesh.vertices(mesh.faces(:,3),:));
     [intersect, dist] = TriangleRayIntersection(firstMatrix, rayMatrix, mesh.vertices(mesh.faces(:,2),:), mesh.vertices(mesh.faces(:,1),:), mesh.vertices(mesh.faces(:,3),:), 'planeType', 'one sided');
+    
     intersectMask = intersect & (dist > 0) & (dist <= rayLength);
     mutualVisibilityList(1,rayCount) = 1-max(intersectMask);
-  
 %     % iteratively merge regions until all adjacent regions have mutual visibility below the cutoff
-     if rayCount == raysPerCompare
-%        mutualVisibility = mean(mutualVisibilityList);
-%           
-%         %% debug code
-%         %if rand(1) > 0.95 
-%         if (mutualVisibility > 0.4) && (mutualVisibility <= 0.8)
-%             %% debug code (plot the two patches with the mutual visibility displayed at the top
-%             climits = [0 Inf];
-%             cmap = jet(4);
-% 
-%             meshColor = ones(length(mesh.faces),1);
-%             meshColor(firstFaces) = 2;
-%             meshColor(secondFaces) = 4;
-% 
-%             % plot the mesh
-%             figure
-%             meshHandle = patch(mesh,'FaceColor','flat','EdgeColor','none','FaceAlpha',1);
-% 
-%             % color the mesh
-%             meshHandle.FaceVertexCData = meshColor;
-%             colormap(cmap);
-%             caxis(climits);
-% 
-%             % properly set the axis
-%             %axis([130 330 0 400 0 200]);
-%             daspect([1 1 1]); axis off;
-% 
-%             % light the scene
-%             %light_handle = camlight('headlight');
-%             camlookat(meshHandle);
-%             camlight(0,0); camlight(120,-60); camlight(240,60);
-%             lighting phong;
-% 
-%             title(num2str(mutualVisibility))
-%             1;
-%        end
-%        
+    if rayCount == raysPerCompare
         return
     end
     

@@ -119,7 +119,7 @@ for c = p.chanList
 %         surfaceSegPath = fullfile(inFilePaths{2,c},'surfaceSegment_%i_%i.mat');
 %     end
 
-    parfor t = 1:MD.nFrames_ % parfor
+    for t = 1:MD.nFrames_ % parfor
         
         % display progress
         disp(['      image ' num2str(t) ' (channel ' num2str(c) ')'])

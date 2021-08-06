@@ -67,9 +67,26 @@ meshLength = max([max(positions(:,1))-min(positions(:,1)), max(positions(:,2))-m
 closureSurfaceArea = NaN(length(watershedLabels),1);
 for w = 1:length(watershedLabels)
     if watershedLabels(w) ~= 0
-        [~, closureSurfaceArea(w), ~] = closeMesh(watershedLabels(w), mesh, watersheds, neighbors);
+        [~, closureSurfaceArea(w), ~, ~] = closeMesh(watershedLabels(w), mesh, watersheds, neighbors);
     end
 end
+
+%save('closureSurfaceArea.mat', 'closureSurfaceArea');
+%load('closureSurfaceArea.mat');
+
+%{
+closureSurfaceArea_ = NaN(length(watershedLabels),1);
+faceIndex = transpose(1:length(watersheds));
+tic;
+for w = 1:length(watershedLabels)
+    if watershedLabels(w) ~= 0
+        closureSurfaceArea_(w) = closeMesh_(watershedLabels(w), mesh, watersheds, neighbors, faceIndex);
+    end
+end
+toc;
+%}
+%isequaln(closureSurfaceArea,closureSurfaceArea_)
+%closureSurfaceArea_ = closureSurfaceArea;
 
 % calculate the patch length of the edge pairs
 patchLengthSmall = zeros(size(edgesToCheck, 1), 1); 
@@ -78,12 +95,18 @@ faceIndex = 1:length(watersheds);
 for p = 1:size(edgesToCheck,1)
     [patchLengthSmall(p,1), patchLengthBig(p,1)] = calculatePatchLength(positions, watersheds, faceIndex, edgesToCheck(p,1), edgesToCheck(p,2), meshLength);
 end
+%save('patchLengthSmall.mat', 'patchLengthSmall');
+%load('patchLengthSmall.mat');
 
 % measure the closure surface area of all pairs of adjacent regions found
 triangleMeasure = NaN(size(edgesToCheck,1),1);
+labelIndex = 1:length(watershedLabels);
 for p = 1:size(edgesToCheck,1)
-    triangleMeasure(p) = calculateTriangleMeasurePair(mesh, watersheds, watershedLabels, neighbors, closureSurfaceArea, edgesToCheck(p,1), edgesToCheck(p,2), patchLengthBig(p,1), meshLength);
+    triangleMeasure(p) = calculateTriangleMeasurePair(mesh, watersheds, watershedLabels, neighbors, closureSurfaceArea, edgesToCheck(p,1), edgesToCheck(p,2), patchLengthBig(p,1), meshLength, labelIndex);
 end
+%save('triangleMeasure.mat', 'triangleMeasure');
+%load('triangleMeasure.mat');
+
 edgesToCheck(:,3) = NaN(1,length(triangleMeasure));
 edgesToCheck(:,4) = triangleMeasure(:,1);
 edgesToCheck(:,5) = patchLengthSmall;

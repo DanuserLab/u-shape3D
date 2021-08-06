@@ -108,7 +108,6 @@ if (size(dir  ,1)==1 && N>1 && size(dir  ,2)==3), dir   = repmat(dir  , N, 1); e
 if (size(vert0,1)==1 && N>1 && size(vert0,2)==3), vert0 = repmat(vert0, N, 1); end
 if (size(vert1,1)==1 && N>1 && size(vert1,2)==3), vert1 = repmat(vert1, N, 1); end
 if (size(vert2,1)==1 && N>1 && size(vert2,2)==3), vert2 = repmat(vert2, N, 1); end
-
 %% Check if all the sizes match
 SameSize = (any(size(orig)==size(vert0)) && ...
   any(size(orig)==size(vert1)) && ...
@@ -156,7 +155,6 @@ else
     k = k+1;
   end
 end
-
 %% Set up border parameter
 switch border
   case 'normal'
@@ -172,7 +170,6 @@ end
 %% initialize default output
 intersect = false(size(orig,1),1); % by default there are no intersections
 t = inf+zeros(size(orig,1),1); u=t; v=t;
-
 %% Find faces parallel to the ray
 edge1 = vert1-vert0;          % find vectors for two edges sharing vert0
 edge2 = vert2-vert0;
@@ -188,7 +185,6 @@ switch planeType
     error('Triangle parameter must be either "one sided" or "two sided"');
 end
 if all(~angleOK), return; end % if all parallel than no intersections
-
 %% Different behavior depending on one or two sided triangles
 det(~angleOK) = nan;              % change to avoid division by zero
 u    = sum(tvec.*pvec,2)./det;    % 1st barycentric coordinate
@@ -216,7 +212,6 @@ else
   % test if line/plane intersection is within the triangle
   ok = (ok & v>=-zero & u+v<=1.0+zero);
 end
-
 %% Test where along the line the line/plane intersection occurs
 switch lineType
   case 'line'      % infinite line

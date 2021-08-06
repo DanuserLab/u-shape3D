@@ -149,8 +149,10 @@ for c = 1:length(p.clicksPathList)
         end
 
         % make a kd-tree to store the mesh faces
-        treeMesh = kdtree_build(positions);
-
+        % The following no longer works for me:
+        %treeMesh = kdtree_build(positions);
+        treeMesh = KDTreeSearcher(positions);
+        
         % make a list of bleb indices that have been clicked on for the clickOnAll mode
         if strcmp(clickMode, 'clickOnAll')
             
@@ -165,8 +167,9 @@ for c = 1:length(p.clicksPathList)
             for b = 1:length(blebClickLocs)
 
                 % find the closest face to the click
-                faceIndex = kdtree_k_nearest_neighbors(treeMesh, blebClickLocs(b,:), 1);
-
+                %faceIndex = kdtree_k_nearest_neighbors(treeMesh, blebClickLocs(b,:), 1);
+                faceIndex = knnsearch(treeMesh, locations{f}.blebClickLocs(b,:), 'K', 1);
+                    
                 % find the bleb label of that watershed
                 clickedOnProtrusionsFrame(b) = segment(faceIndex);
             
@@ -181,8 +184,9 @@ for c = 1:length(p.clicksPathList)
             for b = 1:length(locations{f}.notBlebs)
 
                 % find the closest face to the click
-                faceIndex = kdtree_k_nearest_neighbors(treeMesh, locations{f}.notBlebs(b,:), 1);
-
+                %faceIndex = kdtree_k_nearest_neighbors(treeMesh, locations{f}.notBlebs(b,:), 1);
+                faceIndex = knnsearch(treeMesh, locations{f}.notBlebs(b,:), 'K', 1);
+                
                 % find the bleb label of that watershed
                 clickedOnNotProtrusionsFrame(b) = segment(faceIndex);
             
@@ -201,7 +205,9 @@ for c = 1:length(p.clicksPathList)
                 for b = 1:size(locations{f}.blebs,1)
                     
                     % find the closest face to the click
-                    faceIndex = kdtree_k_nearest_neighbors(treeMesh, locations{f}.blebs(b,:), 1);
+                    % Matlab crashes everytime I run:
+                    %faceIndex = kdtree_k_nearest_neighbors(treeMesh, locations{f}.blebs(b,:), 1);
+                    faceIndex = knnsearch(treeMesh, locations{f}.blebs(b,:), 'K', 1);
                     
                     % find the bleb label of that watershed
                     clickedOnProtrusionsFrame(b) = segment(faceIndex);
@@ -214,7 +220,8 @@ for c = 1:length(p.clicksPathList)
                 for b = 1:size(locations{f}.notBlebs,1)
                     
                     % find the closest face to the click
-                    faceIndex = kdtree_k_nearest_neighbors(treeMesh, locations{f}.notBlebs(b,:), 1);
+                    %faceIndex = kdtree_k_nearest_neighbors(treeMesh, locations{f}.notBlebs(b,:), 1);
+                    faceIndex = knnsearch(treeMesh, locations{f}.notBlebs(b,:), 'K', 1);
                     
                     % find the bleb label of that watershed
                     clickedOnNotProtrusionsFrame(b) = segment(faceIndex);
@@ -230,8 +237,8 @@ for c = 1:length(p.clicksPathList)
                     for b = 1:size(locations{f}.protrusions{n},1)
 
                         % find the closest face to the click
-                        faceIndex = kdtree_k_nearest_neighbors(treeMesh, locations{f}.protrusions{n}(b,:), 1);
-
+                        %faceIndex = kdtree_k_nearest_neighbors(treeMesh, locations{f}.protrusions{n}(b,:), 1);
+                        faceIndex = knnsearch(treeMesh, locations{f}.protrusions{n}(b,:), 'K', 1);
                         % find the patch label of that watershed
                         clickedOnProtrusionsFrame{n}(b) = segment(faceIndex);
                     end
@@ -244,8 +251,9 @@ for c = 1:length(p.clicksPathList)
                 for b = 1:size(locations{f}.notProtrusions,1)
                     
                     % find the closest face to the click
-                    faceIndex = kdtree_k_nearest_neighbors(treeMesh, locations{f}.notProtrusions(b,:), 1);
-                    
+                    %faceIndex = kdtree_k_nearest_neighbors(treeMesh, locations{f}.notProtrusions(b,:), 1);
+                    faceIndex = knnsearch(treeMesh, locations{f}.notProtrusions(b,:), 'K', 1);
+                                        
                     % find the patch label of that watershed
                     clickedOnNotProtrusionsFrame(b) = segment(faceIndex);
                 end

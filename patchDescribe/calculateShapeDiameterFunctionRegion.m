@@ -62,7 +62,14 @@ while rayCount < raysPerCompare
     % check every face in the mesh to see if the ray and face intersect using a one-sided ray-triangle intersection algorithm
     startMatrix = repmat([startPosition(1) startPosition(2) startPosition(3)], size(mesh.faces,1), 1);
     rayMatrix = repmat([ray(1) ray(2) ray(3)], size(mesh.faces,1), 1);
-    [intersect, dist] = TriangleRayIntersection(startMatrix, rayMatrix, mesh.vertices(mesh.faces(:,2),:), mesh.vertices(mesh.faces(:,1),:), mesh.vertices(mesh.faces(:,3),:), 'planeType', 'one sided');
+
+    [intersect, dist] = TriangleRayIntersection(startMatrix,...
+                                                rayMatrix, ...
+                                                mesh.vertices(mesh.faces(:,2),:), ...
+                                                mesh.vertices(mesh.faces(:,1),:), ...
+                                                mesh.vertices(mesh.faces(:,3),:), ...
+                                                'planeType', ...
+                                                'one sided');
     intersectMask = dist.*(intersect & (dist > 2)); intersectMask(intersectMask == 0) = Inf;
     [minDist, faceIntersectIndex] = min(intersectMask);
     
@@ -89,13 +96,11 @@ while rayCount < raysPerCompare
     if numLoops > 100*raysPerCompare
         break
     end
-      
 end
 
 % % calculate the self visibility
 % selfVisibility = nanmean(selfVisArray);
 % if isempty(selfVisibility), selfVisibility = nan; end
-
 % calculate the shape diameter function, remove values more than one standard deviation from the median
 %selfVisArray(isnan(sdfArray)) = []; 
 sdfArray(isnan(sdfArray)) = []; 
@@ -108,7 +113,6 @@ sdfArray(sdfArray < sdfMedian - sdfSTD) = [];
 sdf = mean(sdfArray); 
 %selfVisibilityCentral = mean(selfVisArray);
 %if isempty(selfVisibilityCentral), selfVisibilityCentral = nan; end
-
 % % debug code
 % climits = [0 Inf];
 % cmap = jet(3);

@@ -26,15 +26,15 @@ function runKrasBlebSegment()
 
 
 %% Set directories
-imageDirectory = '/home2/mdrisc/Desktop/motif3DExampleDataFinal/testData/krasMV3'; % directory the image is in. The images to be analyzed should be the only thing in the directory.
-motifModelDirectory = '/home2/mdrisc/Desktop/motif3DExampleDataFinal/svmModels'; % directory of SVM motif models
-psfDirectory = '/home2/mdrisc/Desktop/motif3DExampleDataFinal/PSFs'; % directory of microscope PSFs
-saveDirectory = '/home2/mdrisc/Desktop/Motif3DExampleDataFinal/Analysis/krasScript'; % directory for the analysis output
+imageDirectory = 'C:\Users\bsterling\Desktop\ZebrafishScripted\Image'; % directory the image is in. The images to be analyzed should be the only thing in the directory.
+motifModelDirectory = 'C:\Users\bsterling\Desktop\ZebrafishScripted\svmModels'; % directory of SVM motif models
+%psfDirectory = '/home2/mdrisc/Desktop/motif3DExampleDataFinal/PSFs'; % directory of microscope PSFs
+saveDirectory = 'C:\Users\bsterling\Desktop\ZebrafishScripted\Analysis\krasScript'; % directory for the analysis output
 
 
 %% Set movie parameters
-pixelSizeXY = 160; % in nm
-pixelSizeZ = 200; % in nm
+pixelSizeXY = 1000; % in nm
+pixelSizeZ = 500; % in nm
 timeInterval = 60; % in seconds
 
 
@@ -57,19 +57,25 @@ cellSegChannel = 1; collagenChannel = 1; p = setChannels(p, cellSegChannel, coll
 
 
 %% Override Default Parameters
-p.deconvolution.pathPSF = fullfile(psfDirectory,'meSpimPSF.mat');
+%p.deconvolution.pathPSF = fullfile(psfDirectory,'meSpimPSF.mat');
+% Turn off deconvolution:
+p.control.deconvolution = 0;
+p.mesh.useUndeconvolved = 1;
 p.mesh.imageGamma = 0.7;
+%{
 p.motifDetect.svmPath = {fullfile(motifModelDirectory,'SVMcertainBleb1'), ... % input more than one motif model to have the models vote
     fullfile(motifModelDirectory, 'SVMcertainBleb2'), ...
     fullfile(motifModelDirectory, 'SVMcertainBleb3')};
-%p.motifDetect.svmPath = fullfile(motifModelDirectory,'SVMtestKras');
-p.motifDetect.removePatchesSVMpath = fullfile(motifModelDirectory, 'SVMcertainRetractionFiber');
+%}
+p.motifDetect.svmPath = motifModelDirectory;%fullfile(motifModelDirectory,'SVMZebrafish');
+p.motifDetect.removePatchesSVMpath = fullfile(motifModelDirectory, 'SVMZebrafishcertainRetractionFiber');
 p.intensityBlebCompare.analyzeOnlyFirst = 1;
 p.intensityBlebCompare.calculateVonMises = 1;
 
 
 %% Analyze kras cells
-imageList = 1:3;
+%imageList = 1:3;
+imageList = 1;
 parfor c = 1:length(imageList) % can be made a parfor loop if sufficient RAM is available.
     disp(['--------- Analysing KRAS Cell ' num2str(imageList(c))])
     
@@ -107,6 +113,7 @@ end
 
 %% Plot analyses (or use runPlotIntensityBlebCompare)
 % (Note that more than three images would normally be analyzed to draw robust conclusions.)
+%{
 disp('--------- Plotting Analyses')
 p.savePath = fullfile(saveDirectory, 'analysisFigures');
 p.mainDirectory = saveDirectory;
@@ -115,3 +122,4 @@ p.cellsList{2} = ['Cell2'];
 p.cellsList{3} = ['Cell3'];
 p.analyzeDiffusion = 1; p.analyzeVonMises = 1; p.analyzeDistance = 1;
 plotIntensityBlebCompare(p); % see this function for more plots, many plots are commented out
+%}

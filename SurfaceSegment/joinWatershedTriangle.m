@@ -79,6 +79,7 @@ while ~isempty(edgesToCheck)
     end
     
     % find the closure surface area of the combined region
+    faceIndex = transpose(1:length(watershedsCombined));
     [~, closureSurfaceAreaCombinedRegion, ~] = closeMesh(mergeLabel, mesh, watershedsCombined, neighbors);
     
     % calculate the value of the triangle measure (inspired by the law of cosines)

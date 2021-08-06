@@ -22,12 +22,16 @@ function [patchLengthSmall, patchLengthBig] = calculatePatchLength(positions, wa
 % 
 
 % calculate the minimum patchLength of the two regions
+% THESE FIRST TWO LINES ARE MOST TIME CONSUMING:
 firstFaces = faceIndex(watersheds == firstLabel);
 secondFaces = faceIndex(watersheds == secondLabel);
+
 firstSize = max([max(positions(firstFaces,1))-min(positions(firstFaces,1)), ... 
     max(positions(firstFaces,2))-min(positions(firstFaces,2)), max(positions(firstFaces,3))-min(positions(firstFaces,3))]);
+
 secondSize = max([max(positions(secondFaces,1))-min(positions(secondFaces,1)), ... 
     max(positions(secondFaces,2))-min(positions(secondFaces,2)), max(positions(secondFaces,3))-min(positions(secondFaces,3))]);
+
 patchLengthSmall = min([firstSize, secondSize, 0.2*meshLength]);
 patchLengthSmall = max([patchLengthSmall, 8]);
 patchLengthBig = max([firstSize, secondSize]);
