@@ -28,10 +28,18 @@ spillDepths = Inf(numWatersheds, 1);
 spillNeighbors = zeros(numWatersheds, 1);
 ridgeHeights = zeros(numWatersheds, 1);
 
+faceIndex = transpose(1:length(watersheds));
+
 % iterate through the regions
+tic;
 for w = 1:numWatersheds
-    
     % measure the spill depth and spill neighbor for the region
-    [spillDepths(w,1), spillNeighbors(w,1), ridgeHeights(w,1)] = measureDepthOneRegion(w, faceNeighbors, watersheds, watershedLabels, watershedGraph, measure);
- 
+    [spillDepths(w,1), spillNeighbors(w,1), ridgeHeights(w,1)] = measureDepthOneRegion(w, faceNeighbors, watersheds, watershedLabels, watershedGraph, measure, faceIndex);
 end
+toc;
+
+%tic;
+%for w = 1:numWatersheds
+%    [spillDepths(w,1), spillNeighbors(w,1), ridgeHeights(w,1)] = measureDepthOneRegion(w, faceNeighbors, watersheds, watershedLabels, watershedGraph, measure);
+%end
+%toc;

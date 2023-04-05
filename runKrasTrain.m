@@ -35,15 +35,15 @@ function runKrasTrain()
 
 
 %% Set Directories
-analysisDirectory = '/Users/meghan/Desktop/Morphology3DPackage/Analysis/krasScript';
-motifModelDirectory = '/Users/meghan/Desktop/Morphology3DPackage/svmModels';
+analysisDirectory = 'C:\Users\bsterling\Desktop\ZebrafishScripted\Analysis\';
+motifModelDirectory = 'C:\Users\bsterling\Desktop\ZebrafishScripted\Analysis\Cell1\Morphology\svmModels\';
 
 
 %% Generate training data
 % set Kras cells to click on
 p.cellsList{1} = 'Cell1';
-p.cellsList{2} = 'Cell2';
-p.cellsList{3} = 'Cell3';
+%p.cellsList{2} = 'Cell2';
+%p.cellsList{3} = 'Cell3';
 
 % set parameters for generating training data (see the documentation of clickOnBlebs.m for more information)
 p.mainDirectory = analysisDirectory;
@@ -57,11 +57,13 @@ p.framesPerCell = 1;
 % generate training data
 clickOnProtrusions(p)
 
+%load('C:\Users\bsterling\Desktop\ZebrafishScripted\Analysis\Cell1\TrainingData\TestClicker\blebLocs.mat');
 
 %% Train and validate an SVM motif classifier
-p.MDsPathList{1} = p.cellsList{1};  p.clicksPathList{1} = fullfile(p.MDsPathList{1}, 'TrainingData', p.nameOfClicker);
-p.MDsPathList{2} = p.cellsList{2};  p.clicksPathList{2} = fullfile(p.MDsPathList{2}, 'TrainingData', p.nameOfClicker);
-p.MDsPathList{3} = p.cellsList{3};  p.clicksPathList{3} = fullfile(p.MDsPathList{3}, 'TrainingData', p.nameOfClicker);
+p.MDsPathList{1} = p.cellsList{1};  
+p.clicksPathList{1} = fullfile(p.MDsPathList{1}, 'TrainingData', p.nameOfClicker);
+%p.MDsPathList{2} = p.cellsList{2};  p.clicksPathList{2} = fullfile(p.MDsPathList{2}, 'TrainingData', p.nameOfClicker);
+%p.MDsPathList{3} = p.cellsList{3};  p.clicksPathList{3} = fullfile(p.MDsPathList{3}, 'TrainingData', p.nameOfClicker);
 p.saveNameModel = 'SVMtestKras';
 p.saveNameCells = 'testKrasCells';
 p.mainDirectory = analysisDirectory;
@@ -72,4 +74,4 @@ disp('Training the classifier')
 trainProtrusionsClassifier(p);
 
 % validate the classifier
-validateBlebClassifier(p);
+%validateBlebClassifier(p);

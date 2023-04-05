@@ -50,9 +50,12 @@ end
 originPSF = ceil((sizePSF+ones(1,3))/2); % (for even sizes the origin occurs above the center, i.e. the origin of an image with size 4x4 occurs at (3,3) )
 PSF = PSF-min(PSF(:));
 PSF = PSF./max(PSF(:));
-smallPSF = PSF((originPSF(1)-ceil((newImageSize(1)-1)/2)):(originPSF(1)+floor((newImageSize(1)-1)/2)), ...
+smallPSF = PSF( ...
+    (originPSF(1)-ceil((newImageSize(1)-1)/2)):(originPSF(1)+floor((newImageSize(1)-1)/2)), ...
     (originPSF(2)-ceil((newImageSize(2)-1)/2)):(originPSF(2)+floor((newImageSize(2)-1)/2)), ...
-    (originPSF(3)-ceil((newImageSize(3)-1)/2)):(originPSF(3)+floor((newImageSize(3)-1)/2))); clear PSF;
+    (originPSF(3)-ceil((newImageSize(3)-1)/2)):(originPSF(3)+floor((newImageSize(3)-1)/2))); 
+
+clear PSF;
 
 % find the OTF
 smallOTF = fftshift(fftn(smallPSF)); clear smallPSF ;

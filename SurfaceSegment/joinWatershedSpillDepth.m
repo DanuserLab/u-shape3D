@@ -77,7 +77,8 @@ while keepMerging
     ridgeHeights(mergeDestroyIndex) = 0;
     spillNeighbors(mergeDestroyIndex) = 0;
     spillNeighbors(spillNeighbors==mergeDestroy) = mergeLabel;
-    [spillDepths(mergeLabelIndex), spillNeighbors(mergeLabelIndex), ridgeHeights(mergeLabelIndex)] = measureDepthOneRegion(mergeLabelIndex, neighbors, watersheds, watershedLabels, watershedGraph, measure);
+    faceIndex = transpose(1:length(watersheds));
+    [spillDepths(mergeLabelIndex), spillNeighbors(mergeLabelIndex), ridgeHeights(mergeLabelIndex)] = measureDepthOneRegion(mergeLabelIndex, neighbors, watersheds, watershedLabels, watershedGraph, measure, faceIndex);
     
     % check if there are more regions to be merged
     keepMerging = 0;

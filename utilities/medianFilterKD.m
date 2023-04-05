@@ -25,6 +25,7 @@ function medianFiltered = medianFilterKD(surface, measure, radius)
 % get the face center positions 
 nFaces = size(surface.faces,1);
 faceCenters = zeros(nFaces,3);
+
 for f = 1:nFaces
     faceCenters(f,:) = mean(surface.vertices(surface.faces(f,:),:),1);
 end

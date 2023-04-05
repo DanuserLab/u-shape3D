@@ -1,4 +1,4 @@
-function triangleMeasure = calculateTriangleMeasurePair(mesh, watersheds, watershedLabels, neighbors, closureSurfaceArea, firstRegionIndex, secondRegionIndex, patchLength, meshLength)
+function triangleMeasure = calculateTriangleMeasurePair(mesh, watersheds, watershedLabels, neighbors, closureSurfaceArea, firstRegionIndex, secondRegionIndex, patchLength, meshLength, labelIndex)
 
 % check to make sure that the patchLength isn't too large
 %
@@ -25,11 +25,13 @@ if patchLength > 0.25*meshLength
     return
 end
 
+%tic;
 % find the graph labels of the first two watersheds on the list
-labelIndex = 1:length(watershedLabels);
 gLabel1 = labelIndex(watershedLabels == firstRegionIndex);
 gLabel2 = labelIndex(watershedLabels == secondRegionIndex);  
+%toc;
 
+%tic;
 % make a list of watershed regions in which the two regions are merged 
 watershedsCombined = watersheds;
 mergeLabel = min([firstRegionIndex secondRegionIndex]);
@@ -39,9 +41,14 @@ if mergeLabel == firstRegionIndex
 else
     watershedsCombined(watersheds == firstRegionIndex) = mergeLabel;
 end
+%toc;
 
+%tic;
 % find the closure surface area of the combined region
-[~, closureSurfaceAreaCombinedRegion, ~] = closeMesh(mergeLabel, mesh, watershedsCombined, neighbors);
+[~, closureSurfaceAreaCombinedRegion, ~, ~] = closeMesh(mergeLabel, mesh, watershedsCombined, neighbors);
+%toc;
 
+%tic;
 % calculate the value of the triangle measure (inspired by the law of cosines)
 triangleMeasure = (closureSurfaceArea(gLabel1)+closureSurfaceArea(gLabel2)-closureSurfaceAreaCombinedRegion)/(sqrt(closureSurfaceArea(gLabel1)*closureSurfaceArea(gLabel2)));
+%toc;

@@ -47,28 +47,34 @@ for n = 1:length(neighborsOfDestroyed) % replace the destoyed label with the mer
 end
 
 % update the list of closure surface areas
-[~, closureSurfaceAreaCombinedRegion, ~] = closeMesh(mergeLabel, mesh, watersheds, neighbors);
+faceIndex = transpose(1:length(watersheds));
+[~, closureSurfaceAreaCombinedRegion, ~, ~] = closeMesh(mergeLabel, mesh, watersheds, neighbors);
 closureSurfaceArea(mergeLabelIndex) = closureSurfaceAreaCombinedRegion;
 closureSurfaceArea(mergeDestroyIndex) = NaN;
 
 % remove all instances of both watersheds in the list of edges to check
 toRemove = logical( (edgesToCheck(:,1)==mergeLabel) + (edgesToCheck(:,2)==mergeLabel) + ...
     (edgesToCheck(:,1)==mergeDestroy) + (edgesToCheck(:,2)==mergeDestroy) );
-edgesToCheckNew = [];
-for p = 1:size(edgesToCheck,1)
+
+% SAVES APPROXIMATELY 88 SECONDS FOR ME:
+edgesToCheck = edgesToCheck(find(toRemove==0), :);
+%{
+edgesToCheckNew_ = [];
+for p = 1:size(edgesToCheck_,1)
     if toRemove(p) == 0
-        edgesToCheckNew = [edgesToCheckNew; edgesToCheck(p,:)];
+        edgesToCheckNew_ = [edgesToCheckNew_; edgesToCheck(p,:)];
     end
 end
+isequaln(edgesToCheckNew, edgesToCheckNew_)
 edgesToCheck = edgesToCheckNew;
+%}
 
 % calculate the triangle measure and mutual visibility for the pairs to be added and append the new pairs to the list
 nLabels = watershedGraph{mergeLabelIndex};
 pairsToAdd = [mergeLabel.*ones(length(nLabels),1), nLabels'];
-faceIndex = 1:length(watersheds);
 for p = 1:size(pairsToAdd, 1)
     [patchLengthSmall, patchLengthBig] = calculatePatchLength(positions, watersheds, faceIndex, pairsToAdd(p,1), pairsToAdd(p,2), meshLength);
     mutVis = calculateMutualVisibilityPair(mesh, positions, watersheds, pairsToAdd(p,1), pairsToAdd(p,2), patchLengthSmall, raysPerCompare, 1);
-    triMeas = calculateTriangleMeasurePair(mesh, watersheds, watershedLabels, neighbors, closureSurfaceArea, pairsToAdd(p,1), pairsToAdd(p,2), patchLengthBig, meshLength);
+    triMeas = calculateTriangleMeasurePair(mesh, watersheds, watershedLabels, neighbors, closureSurfaceArea, pairsToAdd(p,1), pairsToAdd(p,2), patchLengthBig, meshLength, labelIndex);
     edgesToCheck = [edgesToCheck; pairsToAdd(p,1:2), mutVis, triMeas, patchLengthSmall, patchLengthBig];
 end

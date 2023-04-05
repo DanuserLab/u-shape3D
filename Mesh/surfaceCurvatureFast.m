@@ -95,7 +95,6 @@ H = zeros(nTri,1);
 
 % should probably vectorize/arrayfun this at some point...
 for i = 1:nTri
-    
     % get the coordinates of this triangle's vertices
     X = S.vertices(S.faces(i,:),:);
     

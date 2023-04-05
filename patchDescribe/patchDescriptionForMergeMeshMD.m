@@ -92,7 +92,7 @@ for c = p.chanList
     neighborsPath = fullfile(inFilePaths{1,c},'neighbors_%i_%i.mat');
     surfaceSegPath = fullfile(inFilePaths{2,c},'surfaceSegment_%i_%i.mat');
 
-    parfor t = 1:MD.nFrames_ % parfor
+    for t = 1:MD.nFrames_ % parfor
         
         % display progress
         disp(['   image ' num2str(t) ' (channel ' num2str(c) ')'])
