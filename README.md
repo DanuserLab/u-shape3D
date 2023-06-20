@@ -11,3 +11,9 @@ For more information, please read the [User Guide](doc/usersGuide_usurface3D.pdf
 Example data is provided [here](https://cloud.biohpc.swmed.edu/index.php/s/Z9j62w2FCareyJY/download).
 
 ![Alt Text](doc/BlebbingCells.png?raw=true)
+
+----------------------
+### Danuser Lab Links
+[Danuser Lab Website](https://www.danuserlab-utsw.org/)
+
+[Software Links](https://github.com/DanuserLab/)
