@@ -279,7 +279,7 @@ procID = str2double(prop(length('pushbutton_set_')+1:end));
 crtProc=userData.crtPackage.getProcessClassNames{procID};
 crtProcGUI =eval([crtProc '.GUI']);
 try 
-    userData.setFig(procID) = crtProcGUI('mainFig',handles.figure1,procID);
+    userData.setFig{procID} = crtProcGUI('mainFig',handles.figure1,procID);
 catch ME
     if exist('deactivateCLIBackup','var') == 1 && isempty(deactivateCLIBackup)
         rethrow(ME)
@@ -287,7 +287,7 @@ catch ME
         msgbox(ME.message)
         warning('Loading Custom GUI failed! -- Running CLI parameter config as BACKUP - follow instructions');
         uiwait(msgbox({'Loading Custom GUI failed!','Running CLI parameter config as BACKUP','Please follow instructions'}));
-        userData.setFig(procID) = cliGUI('mainFig',handles.figure1,procID);
+        userData.setFig{procID} = cliGUI('mainFig',handles.figure1,procID);
     end
 end
 
