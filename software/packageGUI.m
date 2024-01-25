@@ -281,7 +281,7 @@ crtProcGUI =eval([crtProc '.GUI']);
 try 
     userData.setFig(procID) = crtProcGUI('mainFig',handles.figure1,procID);
 catch ME
-    if exist('deactivateCLIBackup','var') == 1 && deactivateCLIBackup
+    if exist('deactivateCLIBackup','var') == 1 && isempty(deactivateCLIBackup)
         rethrow(ME)
     else
         msgbox(ME.message)
