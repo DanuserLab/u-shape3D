@@ -165,7 +165,7 @@ function url = getBiosensorsPackHelpPgUrl(className)
 % This local fcn is to get url of the wiki page of Biosensors package.
 switch(className)
     case 'BiosensorsPackage'
-        url = 'https://github.com/DanuserLab/u-probe/wiki/u-probe-Package-Description';
+        url = 'https://github.com/DanuserLab/u-probe/wiki/Biosensors-Package-Description';
     case 'DarkCurrentCorrectionProcess'
         url = 'https://github.com/DanuserLab/u-probe/wiki/Dark-Current-Correction-Process-Description';
     case 'ShadeCorrectionProcess'
