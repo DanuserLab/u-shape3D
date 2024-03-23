@@ -53,7 +53,7 @@ function measureIntensityMeshMD(processOrMovieData, varargin)
 % p.meanNormalization    - 1 to use the mean value for intensity, used only
 %                          for intensity at mesh vertices
 % 
-% p.rmInsideBackground    - 1 to remove the background of the cytosol area
+% p.normInsideBackground    - 1 to remove the background of the cytosol area
 % 
 %% parse inputs
 %
@@ -221,9 +221,10 @@ for c = p.chanList
         image3D = image3D - background;
         
         % subtract the cytosol background - HMF2022
-        if p.rmInsideBackground ==1
+        if p.normInsideBackground ==1
+            %normalize intensity to cytosolic intensity
             background = median(image3D(imageMasked));
-            image3D = image3D - background;
+            image3D = image3D ./ background;
         end
         
         % perform the left-right correction if wanted

@@ -160,7 +160,7 @@ defaultParams.leftRightCorrection = 0; % try to corrects the left-right microsco
                    
             defaultParams = prepPerChannelParams(defaultParams, nChan);                      
         
-            defaultParams.rmInsideBackground = 1; % 1 is to subtract the background. New parameter added for Hanieh Mazloom Farsibaf in measureIntensityMeshMD, June 2022.
+            defaultParams.normInsideBackground = 1; % 1 is to divide the cytosolic intensity New parameter added for Hanieh Mazloom Farsibaf in measureIntensityMeshMD, June 2022, update Mar2024.
             defaultParams.meanNormalization = 1; % New parameter added for Hanieh Mazloom Farsibaf in measureIntensityMeshMD, June 2022.
             
         end
