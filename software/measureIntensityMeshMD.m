@@ -223,7 +223,7 @@ for c = p.chanList
         % subtract the cytosol background - HMF2022
         if p.normInsideBackground ==1
             %normalize intensity to cytosolic intensity
-            background = median(image3D(imageMasked));
+            background = mean(image3D(imageMasked)); %it should be mean not median
             image3D = image3D ./ background;
         end
         
