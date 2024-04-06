@@ -26,7 +26,14 @@ selectedProps = get(handles.listbox_selectedChannels, {'String','UserData','Valu
 if isempty(selectedProps{1}) || isempty(selectedProps{3}),return; end
 
 % Delete selected item
-selectedProps{1}(selectedProps{3}) = [ ];
+% Jenny & Hillary 3/25/24: 
+selectedProps{1}(selectedProps{3}) = {''};
 selectedProps{2}(selectedProps{3}) = [ ];
-set(handles.listbox_selectedChannels, 'String', selectedProps{1},'UserData',selectedProps{2},...
-    'Value',max(1,min(selectedProps{3},numel(selectedProps{1}))));
+set(handles.listbox_selectedChannels, 'String', selectedProps{1});
+%check if there is an empty path in selected channels and delete it
+%emptyPaths = cellfun("isempty", selectedProps{1});
+%set(handles.listbox_selectedChannels, 'String', selectedProps{1}(emptyPaths))
+%selectedProps = {selectedProps{1}(~emptyPaths) selectedProps{2} selectedProps{3}};
+set(handles.listbox_selectedChannels, 'String', selectedProps{1});
+set(handles.listbox_selectedChannels,'UserData',selectedProps{2});
+set(handles.listbox_selectedChannels,'Value',max(1,min(selectedProps{3},numel(selectedProps{1}))));

@@ -189,8 +189,16 @@ funParams = userData.crtProc.funParams_;
 
 % Set up available input channels
 if isfield(userData, 'MD')
-set(handles.listbox_availableChannels,'String',userData.MD.getChannelPaths(), ...
+    %appdesigner conversion edit: checked if listbox_availablechannels was
+    %of type ListBox or UIControlPropertiesConverter to set up input
+    %channels correctly.
+    if (isa(handles.listbox_availableChannels, 'matlab.ui.control.ListBox'))
+        set(handles.listbox_availableChannels,'Items',userData.MD.getChannelPaths(), ...
+    'ItemsData',1:numel(userData.MD.channels_));
+    else
+        set(handles.listbox_availableChannels,'String',userData.MD.getChannelPaths(), ...
     'UserData',1:numel(userData.MD.channels_));
+    end
 
 channelIndex = funParams.ChannelIndex;
 elseif isfield(userData, 'ImD')
