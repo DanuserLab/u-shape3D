@@ -1,4 +1,6 @@
 # u-shape3D
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.10494005.svg)](https://doi.org/10.5281/zenodo.10494005)
+
 ## Software for 3D Morphological Motif Detection
 
 This suite of software was designed to detect morphological motifs, such as blebs, filopodia, and lamellipodia, from 3D images of surfaces, particularly images of cell surfaces.
