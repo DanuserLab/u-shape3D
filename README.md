@@ -1,4 +1,6 @@
 # u-shape3D
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.10494005.svg)](https://doi.org/10.5281/zenodo.10494005)
+
 ### Software for 3D Morphological Motif Detection
 ##### May 23, 2019
 
