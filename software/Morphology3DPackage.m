@@ -32,7 +32,7 @@ classdef Morphology3DPackage < Package
             outputDir = ip.Results.outputDir;
 
             super_args{1} = owner;
-            super_args{2} = [outputDir  filesep 'uShape3DPackage']; % Updated 2024-9-3. The old save folder name was Morphology
+            super_args{2} = [outputDir  filesep 'Morphology']; % Did not change the save folder's name to uShape3DPackage, b/c 'Morphology' was hard-coded in many save folders in this package. 
 
             % Call the superclass constructor
             obj = obj@Package(super_args{:});
