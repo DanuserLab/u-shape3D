@@ -71,7 +71,8 @@ classdef Intensity3DProcess < MeshProcessingProcess
             paramsUnmatched = ip.Unmatched;
             
             % check the intensityMode parameter
-            intensityModes = {'intensityInsideDepthNormal', 'intensityInsideRaw', 'intensityOtherOutsideRaw', 'intensityOtherRaw', 'intensityOtherInsideDepthNormal'};
+            intensityModes = {'intensityInsideDepthNormal', 'intensityInsideRaw', 'intensityOtherOutsideRaw',...
+                'intensityOtherRaw', 'intensityOtherInsideDepthNormal', 'intensityInsideRawVertex','intensityInsideDepthNormalVertex'};
             assert(max(cellfun(@(x) strcmp(x,paramsMatched.intensityMode), intensityModes)), '%s is an invalid intensityMode parameter', paramsMatched.intensityMode);
             
             % check the channels parameter
@@ -138,8 +139,8 @@ classdef Intensity3DProcess < MeshProcessingProcess
  
             defaultParams.otherChannel = 2; % channel index for calculating the intensity outside the cell
             defaultParams.sampleRadius = 2; % the radius in microns over which the intensity is sampled
-            defaultParams.intensityMode = {'intensityInsideDepthNormal'}; % modes: 'intensityInsideDepthNormal', 'intensityInsideRaw', 'intensityOtherInsideDepthNormal', 'intensityOtherOutsideRaw', intensityOtherRaw' 
-defaultParams.leftRightCorrection = 0; % try to corrects the left-right microscopy intensity offset
+            defaultParams.intensityMode = {'intensityInsideDepthNormal'}; % modes: 'intensityInsideDepthNormal', 'intensityInsideRaw', 'intensityOtherInsideDepthNormal', 'intensityOtherOutsideRaw', intensityOtherRaw' , 'intensityInsideRawVertex','intensityInsideDepthNormalVertex'
+            defaultParams.leftRightCorrection = 0; % try to corrects the left-right microscopy intensity offset
             defaultParams.useDifImage = 0; % analyzes the difference between two frames
             defaultParams.useDeconvolved = 0; % 1 to use the deconvolved image, 0 otherwise
             defaultParams.usePhotobleach = 0; % 1 to use the photobleach corrected images, 0 otherwise            
