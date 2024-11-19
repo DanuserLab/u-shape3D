@@ -15,6 +15,9 @@ Example data is provided [here](https://cloud.biohpc.swmed.edu/index.php/s/Z9j62
 
 ## Software Updates
 
+### New Version 2.1 (Nov. 19th, 2024):
+Resolved array size error in the Mesh step for Windows.
+
 ### New in Version 2.0:
 The software package has been renamed to **u-shape3D** on the GUI. Please select **u-shape3D** from the analysis packages list to run the software.
 
