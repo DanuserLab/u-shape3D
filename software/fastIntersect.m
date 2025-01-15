@@ -3,7 +3,7 @@ function C = fastIntersect(A,B)
 % fastIntersect - A faster version of Matlab's builtin intersect that only works on positive integers
 % (from http://www.mathworks.com/matlabcentral/answers/53796-speed-up-intersect-setdiff-functions)
 %
-% Copyright (C) 2024, Danuser Lab - UTSouthwestern 
+% Copyright (C) 2025, Danuser Lab - UTSouthwestern 
 %
 % This file is part of Morphology3DPackage.
 % 

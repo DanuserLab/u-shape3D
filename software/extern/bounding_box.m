@@ -14,7 +14,7 @@ function [BB,BF,BQ] = bounding_box(V,varargin)
   %   BQ  #BQ by 4 list of quads (only if dim == 3)
   %
 %
-% Copyright (C) 2024, Danuser Lab - UTSouthwestern 
+% Copyright (C) 2025, Danuser Lab - UTSouthwestern 
 %
 % This file is part of Morphology3DPackage.
 % 

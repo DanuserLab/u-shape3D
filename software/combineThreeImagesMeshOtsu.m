@@ -2,7 +2,7 @@ function [surface, image3D, level] = combineThreeImagesMeshOtsu(image3D_1, metho
 
 % combineThreeImagesMeshOtsu - average three 3D images, each normalized by its Otsu threshold, and create a single mesh
 %
-% Copyright (C) 2024, Danuser Lab - UTSouthwestern 
+% Copyright (C) 2025, Danuser Lab - UTSouthwestern 
 %
 % This file is part of Morphology3DPackage.
 % 

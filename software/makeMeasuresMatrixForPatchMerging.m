@@ -2,7 +2,7 @@ function measures = makeMeasuresMatrixForPatchMerging(pairStats, inModel, pixelS
 
 % makeMeasuresMatrixForPatchMerging - outputs a matrix of measures for machine learning of patch merging
 %
-% Copyright (C) 2024, Danuser Lab - UTSouthwestern 
+% Copyright (C) 2025, Danuser Lab - UTSouthwestern 
 %
 % This file is part of Morphology3DPackage.
 % 

@@ -2,7 +2,7 @@ function joinedWatersheds = joinWatershedSpillDepth(depthThreshold, neighbors, w
 
 % joinedNeighbors - joins watershed regions by iteratively merging the region with the lowest depth until the depth threshold is reached
 %
-% Copyright (C) 2024, Danuser Lab - UTSouthwestern 
+% Copyright (C) 2025, Danuser Lab - UTSouthwestern 
 %
 % This file is part of Morphology3DPackage.
 % 

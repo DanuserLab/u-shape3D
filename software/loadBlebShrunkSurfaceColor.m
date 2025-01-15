@@ -2,7 +2,7 @@ function meshColor = loadBlebShrunkSurfaceColor(MD, chan, frame, colorKey)
 
 % loadBlebShrunkSurfaceColor - loads the colored of a mesh colored by bleb segmentation (blebs shrunk)
 %
-% Copyright (C) 2024, Danuser Lab - UTSouthwestern 
+% Copyright (C) 2025, Danuser Lab - UTSouthwestern 
 %
 % This file is part of Morphology3DPackage.
 % 

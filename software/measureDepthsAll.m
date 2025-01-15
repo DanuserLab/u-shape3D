@@ -2,7 +2,7 @@ function [spillDepths, spillNeighbors, ridgeHeights] = measureDepthsAll(faceNeig
 
 % measureDepthsAll - measure the depth and spillover neighbor for each watershed region
 %
-% Copyright (C) 2024, Danuser Lab - UTSouthwestern 
+% Copyright (C) 2025, Danuser Lab - UTSouthwestern 
 %
 % This file is part of Morphology3DPackage.
 % 

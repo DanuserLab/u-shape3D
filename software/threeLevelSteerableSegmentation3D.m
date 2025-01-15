@@ -2,7 +2,7 @@ function [surface, combinedImage, level] = threeLevelSteerableSegmentation3D(ima
 
 % threeLevelSteerableSegmentation3D - combines a steerable filter of a non_Apodized image with an Otsu filter and an "inside" filter of apodized images
 %
-% Copyright (C) 2024, Danuser Lab - UTSouthwestern 
+% Copyright (C) 2025, Danuser Lab - UTSouthwestern 
 %
 % This file is part of Morphology3DPackage.
 % 

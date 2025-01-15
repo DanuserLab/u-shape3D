@@ -2,7 +2,7 @@ function defaultControl = defaultControlParamsMorphology3DPackage()
 
 % defaultControlParamsMorphology3DPackage - set default control parameters for the Morphology3D package
 %
-% Copyright (C) 2024, Danuser Lab - UTSouthwestern 
+% Copyright (C) 2025, Danuser Lab - UTSouthwestern 
 %
 % This file is part of Morphology3DPackage.
 % 

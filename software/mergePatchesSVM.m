@@ -2,7 +2,7 @@ function surfaceSegmentPatchMerge = mergePatchesSVM(surface, surfaceSegment, pai
 
 % surfaceSegmentPatchMerge - merge patches according to an SVM model
 %
-% Copyright (C) 2024, Danuser Lab - UTSouthwestern 
+% Copyright (C) 2025, Danuser Lab - UTSouthwestern 
 %
 % This file is part of Morphology3DPackage.
 % 

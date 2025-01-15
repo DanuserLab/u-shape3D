@@ -2,7 +2,7 @@ function [centerValue, centerLocation] = findInteriorMostPoint(image3DBinary)
 
 % findMostInteriorPoint - given a binary 3D image of a cell, find the interior point that is farthest from the cell edge 
 %
-% Copyright (C) 2024, Danuser Lab - UTSouthwestern 
+% Copyright (C) 2025, Danuser Lab - UTSouthwestern 
 %
 % This file is part of Morphology3DPackage.
 % 

@@ -2,7 +2,7 @@ function image3D = multiCellDetect(image3D, gaussSizePreThresh, minVolume, dilat
 
 % multiCellDetect - remakes the 3D image so that only the xth most bright cell is visible (iffy)
 %
-% Copyright (C) 2024, Danuser Lab - UTSouthwestern 
+% Copyright (C) 2025, Danuser Lab - UTSouthwestern 
 %
 % This file is part of Morphology3DPackage.
 % 

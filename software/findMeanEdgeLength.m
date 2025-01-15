@@ -2,7 +2,7 @@ function meanEdgeLength = findMeanEdgeLength(surface)
 
 % meanEdgeLength finds the edge length, in pixels, of a mesh given a surface (the output of the patch command)
 %
-% Copyright (C) 2024, Danuser Lab - UTSouthwestern 
+% Copyright (C) 2025, Danuser Lab - UTSouthwestern 
 %
 % This file is part of Morphology3DPackage.
 % 

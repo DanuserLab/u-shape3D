@@ -2,7 +2,7 @@ function [labels, segmentationGraph] = makeGraphFromLabel(neighbors, labeledFace
 
 % makeGraphFromLabel - make a graph from a spatial segmentation of faces labeled by label
 %
-% Copyright (C) 2024, Danuser Lab - UTSouthwestern 
+% Copyright (C) 2025, Danuser Lab - UTSouthwestern 
 %
 % This file is part of Morphology3DPackage.
 % 

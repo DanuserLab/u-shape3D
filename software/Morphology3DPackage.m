@@ -2,7 +2,7 @@ classdef Morphology3DPackage < Package
     
     % Morphology3DPackage is the package associated with the motif detection paper
 %
-% Copyright (C) 2024, Danuser Lab - UTSouthwestern 
+% Copyright (C) 2025, Danuser Lab - UTSouthwestern 
 %
 % This file is part of Morphology3DPackage.
 % 

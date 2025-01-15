@@ -2,7 +2,7 @@ function [sparseRegion, nodeLabels] = graphOfRegion(neighbors,watersheds,regionL
 
 % graphOfRegion - constructs a sparse graph of a region (optionally weighted by distance)
 %
-% Copyright (C) 2024, Danuser Lab - UTSouthwestern 
+% Copyright (C) 2025, Danuser Lab - UTSouthwestern 
 %
 % This file is part of Morphology3DPackage.
 % 

@@ -34,7 +34,7 @@ function measureIntensityBlebCompareMeshMD(processOrMovieData, varargin)
 %
 % Note: There are assumed to be only two classes.
 %
-% Copyright (C) 2024, Danuser Lab - UTSouthwestern 
+% Copyright (C) 2025, Danuser Lab - UTSouthwestern 
 %
 % This file is part of Morphology3DPackage.
 % 

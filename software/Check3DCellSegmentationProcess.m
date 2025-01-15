@@ -2,7 +2,7 @@ classdef Check3DCellSegmentationProcess < MaskProcess & NonSingularProcess
 
  % Check3DCellSegmentationProcess - create and display binary 3D mask using Mesh3DProcess outputs.
 %
-% Copyright (C) 2024, Danuser Lab - UTSouthwestern 
+% Copyright (C) 2025, Danuser Lab - UTSouthwestern 
 %
 % This file is part of Morphology3DPackage.
 % 

@@ -2,7 +2,7 @@ function runKrasTrain()
 
 % runKrasTrain - for the three kras-labeled cells provided as example images, train an SVM to detect blebs
 %
-% Copyright (C) 2024, Danuser Lab - UTSouthwestern 
+% Copyright (C) 2025, Danuser Lab - UTSouthwestern 
 %
 % This file is part of Morphology3DPackage.
 % 

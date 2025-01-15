@@ -2,7 +2,7 @@ function [image3D, level] = prepareCellOtsuSeg(image3D)
 
 % prepareCellOtsuSeg - calculates an Otsu threshold and prepares the image for thresholding
 %
-% Copyright (C) 2024, Danuser Lab - UTSouthwestern 
+% Copyright (C) 2025, Danuser Lab - UTSouthwestern 
 %
 % This file is part of Morphology3DPackage.
 % 

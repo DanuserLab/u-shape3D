@@ -1,7 +1,7 @@
 function saveMeshRotation(light_handle, rotSavePath, varargin)
 % saveMeshRotation - rotate and save the current figure (could be used after plotMeshFigure)
 %
-% Copyright (C) 2024, Danuser Lab - UTSouthwestern 
+% Copyright (C) 2025, Danuser Lab - UTSouthwestern 
 %
 % This file is part of Morphology3DPackage.
 % 

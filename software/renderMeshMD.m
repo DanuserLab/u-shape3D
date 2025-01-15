@@ -6,7 +6,7 @@ function [meshHandle, figHandle] = renderMeshMD(processOrMovieData, varargin)
 % Andrew R. Jamieson, July 2018
 %
 %
-% Copyright (C) 2024, Danuser Lab - UTSouthwestern 
+% Copyright (C) 2025, Danuser Lab - UTSouthwestern 
 %
 % This file is part of Morphology3DPackage.
 % 

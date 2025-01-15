@@ -2,7 +2,7 @@ function weinerEstimateList = weinerDeconvolveFull(MD, deconPSF, apoPSF, maxOTF,
 
 % weinerDeconvolveFull - performs weiner deconvolution and apodization, also tries to calculate the weiner parameter
 %
-% Copyright (C) 2024, Danuser Lab - UTSouthwestern 
+% Copyright (C) 2025, Danuser Lab - UTSouthwestern 
 %
 % This file is part of Morphology3DPackage.
 % 

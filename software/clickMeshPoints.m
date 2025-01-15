@@ -9,7 +9,7 @@ function meshPoints = clickMeshPoints(mesh, image3D, meshColor, cmap, climits)
 %
 % IMPORTANT NOTE: Please use Matlab R2013a.
 %
-% Copyright (C) 2024, Danuser Lab - UTSouthwestern 
+% Copyright (C) 2025, Danuser Lab - UTSouthwestern 
 %
 % This file is part of Morphology3DPackage.
 % 

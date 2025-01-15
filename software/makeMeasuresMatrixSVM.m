@@ -2,7 +2,7 @@ function [measures, names] = makeMeasuresMatrixSVM(stats, cellStats, inModel, we
 
 % makeMeasuresMatrixSVM - outputs measures for training an SVM or applying an SVM model (simply stores the measure list in one place)
 %
-% Copyright (C) 2024, Danuser Lab - UTSouthwestern 
+% Copyright (C) 2025, Danuser Lab - UTSouthwestern 
 %
 % This file is part of Morphology3DPackage.
 % 

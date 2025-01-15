@@ -2,7 +2,7 @@ function [faceIsFlat, faceIsMin, flowOut, flowIn] = assignGradientAtNodes(neighb
 
 % assignGradientAtNodes - Find the the gradient direction of the measure at every node
 %
-% Copyright (C) 2024, Danuser Lab - UTSouthwestern 
+% Copyright (C) 2025, Danuser Lab - UTSouthwestern 
 %
 % This file is part of Morphology3DPackage.
 % 

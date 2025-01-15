@@ -31,7 +31,7 @@ function [Fp, Fi] = triangle_triangle_adjacency(F)
   %    -1    -1     1
   %
 %
-% Copyright (C) 2024, Danuser Lab - UTSouthwestern 
+% Copyright (C) 2025, Danuser Lab - UTSouthwestern 
 %
 % This file is part of Morphology3DPackage.
 % 

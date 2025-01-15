@@ -2,7 +2,7 @@ function watersheds = shrinkWatersheds(maxThreshold, measure, neighbors, watersh
 
 % shrink the watersheds from the outside in until all faces on the edge of the watershed are below the threshold value
 %
-% Copyright (C) 2024, Danuser Lab - UTSouthwestern 
+% Copyright (C) 2025, Danuser Lab - UTSouthwestern 
 %
 % This file is part of Morphology3DPackage.
 % 

@@ -2,7 +2,7 @@ function dataOnMesh = smoothDataOnMesh(surface, neighbors, dataOnMesh, numIter)
 
 % smoothDataOnMesh - Perform a simple iterative smoothing of data defined on the mesh
 %
-% Copyright (C) 2024, Danuser Lab - UTSouthwestern 
+% Copyright (C) 2025, Danuser Lab - UTSouthwestern 
 %
 % This file is part of Morphology3DPackage.
 % 

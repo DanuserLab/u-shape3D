@@ -7,7 +7,7 @@ function [signalMean, signalMax, signalSTD, backgroundMean, backgroundSTD] = cel
 % Dilates the thresholded image and then sets the standard deviation 
 % outside the dilated region to be the noise.
 %
-% Copyright (C) 2024, Danuser Lab - UTSouthwestern 
+% Copyright (C) 2025, Danuser Lab - UTSouthwestern 
 %
 % This file is part of Morphology3DPackage.
 % 

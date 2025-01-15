@@ -2,7 +2,7 @@ function [watersheds, mergeList, watershedsIntermediate] = joinWatershedTriangle
 
 % joinWatershedTriangleLOS - iteratively merge regions on a 3D mesh using the triange and LOS merging rules 
 %
-% Copyright (C) 2024, Danuser Lab - UTSouthwestern 
+% Copyright (C) 2025, Danuser Lab - UTSouthwestern 
 %
 % This file is part of Morphology3DPackage.
 % 

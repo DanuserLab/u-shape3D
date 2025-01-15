@@ -2,7 +2,7 @@ function medianFiltered = medianFilterKD(surface, measure, radius)
 
 % medianFilterKD - Median filter the mesh in real 3-D space
 %
-% Copyright (C) 2024, Danuser Lab - UTSouthwestern 
+% Copyright (C) 2025, Danuser Lab - UTSouthwestern 
 %
 % This file is part of Morphology3DPackage.
 % 

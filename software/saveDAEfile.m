@@ -2,7 +2,7 @@ function saveDAEfile(image3D, mesh, vertexColorsIndex, cmap, climits, savePath)
 
 % saveDAEfile - saves a colored mesh as a collada dae file
 %
-% Copyright (C) 2024, Danuser Lab - UTSouthwestern 
+% Copyright (C) 2025, Danuser Lab - UTSouthwestern 
 %
 % This file is part of Morphology3DPackage.
 % 

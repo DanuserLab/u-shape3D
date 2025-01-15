@@ -9,7 +9,7 @@ function patchDescriptionForMergeMeshMD(processOrMovieData, varargin)
 % p.OutputDirectory - directory where the output will be saved
 %
 %
-% Copyright (C) 2024, Danuser Lab - UTSouthwestern 
+% Copyright (C) 2025, Danuser Lab - UTSouthwestern 
 %
 % This file is part of Morphology3DPackage.
 % 

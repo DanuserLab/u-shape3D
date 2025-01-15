@@ -20,7 +20,7 @@ function measureMeshMotionMD(processOrMovieData, varargin)
 % p.registerImages       - set to 1 to register adjacent frames, 0 otherwise
 %
 %
-% Copyright (C) 2024, Danuser Lab - UTSouthwestern 
+% Copyright (C) 2025, Danuser Lab - UTSouthwestern 
 %
 % This file is part of Morphology3DPackage.
 % 

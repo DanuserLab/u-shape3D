@@ -2,7 +2,7 @@ function [meanVM, concVM] = estimateVonMisesFisherParametersWeighted(unitVectors
 
 % estimateVonMisesFisherParametersWeighted - for a set of unit vectors, estimate the the weighted von Mises Fisher parameters in the given dimensions
 %
-% Copyright (C) 2024, Danuser Lab - UTSouthwestern 
+% Copyright (C) 2025, Danuser Lab - UTSouthwestern 
 %
 % This file is part of Morphology3DPackage.
 % 

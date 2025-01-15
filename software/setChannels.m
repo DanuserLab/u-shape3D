@@ -2,7 +2,7 @@ function p = setChannels(p, cellSegChannel, collagenChannel)
 
 % setChannels - a helper function to more quickly set channels for Morphology3D
 %
-% Copyright (C) 2024, Danuser Lab - UTSouthwestern 
+% Copyright (C) 2025, Danuser Lab - UTSouthwestern 
 %
 % This file is part of Morphology3DPackage.
 % 

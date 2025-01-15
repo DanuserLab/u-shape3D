@@ -2,7 +2,7 @@ function distanceOnMesh = distanceTransformPatches(watersheds, neighbors)
 
 % distanceTransformPatches - given a segmented mesh, for each face finds the distance to the edge of the nearest segmented patch 
 %
-% Copyright (C) 2024, Danuser Lab - UTSouthwestern 
+% Copyright (C) 2025, Danuser Lab - UTSouthwestern 
 %
 % This file is part of Morphology3DPackage.
 % 

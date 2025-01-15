@@ -2,7 +2,7 @@ function pairStats = calculatePairStats(patchPairs, surface, surfaceSegment, nei
 
 % calculatePairStats - for the list of adjacent patch pairs provided, calculates various statistics
 %
-% Copyright (C) 2024, Danuser Lab - UTSouthwestern 
+% Copyright (C) 2025, Danuser Lab - UTSouthwestern 
 %
 % This file is part of Morphology3DPackage.
 % 

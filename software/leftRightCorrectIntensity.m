@@ -2,7 +2,7 @@ function image3D = leftRightCorrectIntensity(image3D, imageMasked)
 
 % leftRightCorrectIntensity - for 3D images, removes the left-right microscope asymmetry
 %
-% Copyright (C) 2024, Danuser Lab - UTSouthwestern 
+% Copyright (C) 2025, Danuser Lab - UTSouthwestern 
 %
 % This file is part of Morphology3DPackage.
 % 

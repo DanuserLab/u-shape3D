@@ -31,7 +31,7 @@ function motifDetectionMeshMD(processOrMovieData, varargin)
 % p.usePatchMerge   - set to 1 to use the output of patchMerge rather than the
 %                     output of surfaceSegment
 %
-% Copyright (C) 2024, Danuser Lab - UTSouthwestern 
+% Copyright (C) 2025, Danuser Lab - UTSouthwestern 
 %
 % This file is part of Morphology3DPackage.
 % 

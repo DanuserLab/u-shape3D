@@ -2,7 +2,7 @@ function [neighbors, meanCurvatureSmoothed, meanCurvatureUnsmoothed, gaussCurvat
 
 % measureCurvature - measures and smooths curvature on the mesh surface
 %
-% Copyright (C) 2024, Danuser Lab - UTSouthwestern 
+% Copyright (C) 2025, Danuser Lab - UTSouthwestern 
 %
 % This file is part of Morphology3DPackage.
 % 

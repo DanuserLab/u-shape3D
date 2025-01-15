@@ -2,7 +2,7 @@ function vertexColorRGB = faceColorsToVertexColorsRGB(faceColor, mesh, cmap, cli
 
 % faceColorsToVertexColorsRGB - converts a per-face color to a per-vertex color after conversion to an RGB colormap
 %
-% Copyright (C) 2024, Danuser Lab - UTSouthwestern 
+% Copyright (C) 2025, Danuser Lab - UTSouthwestern 
 %
 % This file is part of Morphology3DPackage.
 % 

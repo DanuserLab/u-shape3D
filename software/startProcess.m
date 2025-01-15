@@ -16,7 +16,7 @@ function startProcess(MD, packageName, processName, parametersNew, reset)
 %
 % reset - if 1 resets the process even if it is otherwise up to date
 %
-% Copyright (C) 2024, Danuser Lab - UTSouthwestern 
+% Copyright (C) 2025, Danuser Lab - UTSouthwestern 
 %
 % This file is part of Morphology3DPackage.
 % 

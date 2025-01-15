@@ -24,7 +24,7 @@ function validateBlebClassifier(p)
 % p.usePatchMerge - set to 1 to use data from the PatchMerge process rather
 %                   than the SurfaceSegment process
 %
-% Copyright (C) 2024, Danuser Lab - UTSouthwestern 
+% Copyright (C) 2025, Danuser Lab - UTSouthwestern 
 %
 % This file is part of Morphology3DPackage.
 % 

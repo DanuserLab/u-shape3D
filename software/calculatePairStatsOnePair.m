@@ -2,7 +2,7 @@ function pairStats = calculatePairStatsOnePair(patch1, patch2, surface, surfaceS
 
 % calculatePairStatsOnePair - given two adjacent patches, calculates statistics about them
 %
-% Copyright (C) 2024, Danuser Lab - UTSouthwestern 
+% Copyright (C) 2025, Danuser Lab - UTSouthwestern 
 %
 % This file is part of Morphology3DPackage.
 % 

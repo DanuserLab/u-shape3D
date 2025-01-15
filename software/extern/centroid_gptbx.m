@@ -15,7 +15,7 @@ function [C,vol] = centroid_gptbx(V,F,varargin)
   %   vol  total volume of polyhedron
   %
 %
-% Copyright (C) 2024, Danuser Lab - UTSouthwestern 
+% Copyright (C) 2025, Danuser Lab - UTSouthwestern 
 %
 % This file is part of Morphology3DPackage.
 % 

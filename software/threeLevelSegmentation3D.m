@@ -2,7 +2,7 @@ function [surface, combinedImage, level] = threeLevelSegmentation3D(image3D, sca
 
 % threeLevelSegmentation3D combines Hunter Elliott's surface filter with an Otsu filter and an "inside" filter
 %
-% Copyright (C) 2024, Danuser Lab - UTSouthwestern 
+% Copyright (C) 2025, Danuser Lab - UTSouthwestern 
 %
 % This file is part of Morphology3DPackage.
 % 

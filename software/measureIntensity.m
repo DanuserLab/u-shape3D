@@ -2,7 +2,7 @@ function faceIntensities = measureIntensity(image3D, surface, radius)
 
 % measureIntensity - measures the image intensity near each face of a mesh
 %
-% Copyright (C) 2024, Danuser Lab - UTSouthwestern 
+% Copyright (C) 2025, Danuser Lab - UTSouthwestern 
 %
 % This file is part of Morphology3DPackage.
 % 

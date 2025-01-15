@@ -2,7 +2,7 @@ function [joinedWatersheds, joinedWatershedsSpill, watersheds] = segmentBlebsTri
 
 % segment blebs from curvature using a watershed algorithm and then merging watersheds in two ways
 %
-% Copyright (C) 2024, Danuser Lab - UTSouthwestern 
+% Copyright (C) 2025, Danuser Lab - UTSouthwestern 
 %
 % This file is part of Morphology3DPackage.
 % 

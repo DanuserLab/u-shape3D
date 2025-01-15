@@ -2,7 +2,7 @@ function structCombined = combineStructures(oldStruct, newStruct)
 
 % combineStructures - combines the fields of two structures, using newStruct to define any overlapping fields
 %
-% Copyright (C) 2024, Danuser Lab - UTSouthwestern 
+% Copyright (C) 2025, Danuser Lab - UTSouthwestern 
 %
 % This file is part of Morphology3DPackage.
 % 

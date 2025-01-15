@@ -2,7 +2,7 @@ function [patchLengthSmall, patchLengthBig] = calculatePatchLength(positions, wa
 
 % calculatePatchLength - given two patches on a mesh, finds the maximum length in x y or x of the smallest patch (minimum returned patch length is 8)
 %
-% Copyright (C) 2024, Danuser Lab - UTSouthwestern 
+% Copyright (C) 2025, Danuser Lab - UTSouthwestern 
 %
 % This file is part of Morphology3DPackage.
 % 

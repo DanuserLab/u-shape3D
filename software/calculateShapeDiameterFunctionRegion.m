@@ -2,7 +2,7 @@ function sdf = calculateShapeDiameterFunctionRegion(mesh, facePositions, faceNor
 
 % calculateShapeDiameterFunctionRegion - for a patch, calculate the shape diameter function 
 %
-% Copyright (C) 2024, Danuser Lab - UTSouthwestern 
+% Copyright (C) 2025, Danuser Lab - UTSouthwestern 
 %
 % This file is part of Morphology3DPackage.
 % 

@@ -2,7 +2,7 @@ function [meanDiscreteVM, concDiscreteVM] = measureVonMisesDiscrete(allFaceVecto
 
 % measureVonMisesDiscrete - calculate the von Mises-Fisher parameters, discretized, for a measure
 %
-% Copyright (C) 2024, Danuser Lab - UTSouthwestern 
+% Copyright (C) 2025, Danuser Lab - UTSouthwestern 
 %
 % This file is part of Morphology3DPackage.
 % 

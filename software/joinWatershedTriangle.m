@@ -2,7 +2,7 @@ function joinedWatersheds = joinWatershedTriangle(mesh, triangleRatio, neighbors
 
 % joinWatershedTriangle - joins watershed regions by iteratively merging regions if doing so reduces the closure surface area by more than areaRatio times the initial net closure surface area
 %
-% Copyright (C) 2024, Danuser Lab - UTSouthwestern 
+% Copyright (C) 2025, Danuser Lab - UTSouthwestern 
 %
 % This file is part of Morphology3DPackage.
 % 

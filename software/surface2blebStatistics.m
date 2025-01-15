@@ -2,7 +2,7 @@ function [blebStats, cellStats] = surface2blebStatistics(stats, cellStats, blebS
 
 % surface2blebStatistics - converts the patch statistics structure to a structure specific only to blebs
 %
-% Copyright (C) 2024, Danuser Lab - UTSouthwestern 
+% Copyright (C) 2025, Danuser Lab - UTSouthwestern 
 %
 % This file is part of Morphology3DPackage.
 % 

@@ -2,7 +2,7 @@ function apodizeFilter = makeApodizationFilter(OTF, maxOTF, apoHeight)
 
 % makeApodizationFilter - creates a triangular apodization filter that decays to zero at the edge of a window defined by a height threshold approximation of the OTF
 %
-% Copyright (C) 2024, Danuser Lab - UTSouthwestern 
+% Copyright (C) 2025, Danuser Lab - UTSouthwestern 
 %
 % This file is part of Morphology3DPackage.
 % 

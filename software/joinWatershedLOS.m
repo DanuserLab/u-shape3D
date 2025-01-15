@@ -2,7 +2,7 @@ function joinedWatersheds = joinWatershedLOS(mesh, losRatio, raysPerCompare, nei
 
 % joinWatershedLOS - joins watershed regions by iteratively merging neighboring regions if the regions are mutually visible
 %
-% Copyright (C) 2024, Danuser Lab - UTSouthwestern 
+% Copyright (C) 2025, Danuser Lab - UTSouthwestern 
 %
 % This file is part of Morphology3DPackage.
 % 

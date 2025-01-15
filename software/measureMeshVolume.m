@@ -6,7 +6,7 @@ function volume = measureMeshVolume(mesh)
 % Cha Zhang and Tsuhan Chen. "Efficient Feature Extraction for 2D/3D
 % Objects in Mesh Representation" (2001).
 %
-% Copyright (C) 2024, Danuser Lab - UTSouthwestern 
+% Copyright (C) 2025, Danuser Lab - UTSouthwestern 
 %
 % This file is part of Morphology3DPackage.
 % 

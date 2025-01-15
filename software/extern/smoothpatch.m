@@ -48,7 +48,7 @@ function FV2=smoothpatch(FV,mode,itt,lambda,sigma)
 %
 % Function is written by D.Kroon University of Twente (June 2009)
 %
-% Copyright (C) 2024, Danuser Lab - UTSouthwestern 
+% Copyright (C) 2025, Danuser Lab - UTSouthwestern 
 %
 % This file is part of Morphology3DPackage.
 % 

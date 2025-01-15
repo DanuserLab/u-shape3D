@@ -2,7 +2,7 @@ function motion = measureMeshMotionNearest(surfaceA, surfaceB, numNearestNeighbo
 
 % measureMeshMotionNearest - measure the distance from each point in surfaceA to the closest point in surfaceB, takes the median across numNearestNeighbors
 %
-% Copyright (C) 2024, Danuser Lab - UTSouthwestern 
+% Copyright (C) 2025, Danuser Lab - UTSouthwestern 
 %
 % This file is part of Morphology3DPackage.
 % 

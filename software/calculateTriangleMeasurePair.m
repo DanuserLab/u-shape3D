@@ -2,7 +2,7 @@ function triangleMeasure = calculateTriangleMeasurePair(mesh, watersheds, waters
 
 % check to make sure that the patchLength isn't too large
 %
-% Copyright (C) 2024, Danuser Lab - UTSouthwestern 
+% Copyright (C) 2025, Danuser Lab - UTSouthwestern 
 %
 % This file is part of Morphology3DPackage.
 % 

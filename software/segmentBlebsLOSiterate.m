@@ -2,7 +2,7 @@ function [mergeList, joinedWatersheds, joinedWatershedsSpill, rawWatersheds, joi
 
 % segment blebs from curvature using a watershed algorithm and then iteratively merging watersheds in two different ways
 %
-% Copyright (C) 2024, Danuser Lab - UTSouthwestern 
+% Copyright (C) 2025, Danuser Lab - UTSouthwestern 
 %
 % This file is part of Morphology3DPackage.
 % 

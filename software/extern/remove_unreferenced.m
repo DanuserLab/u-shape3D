@@ -24,7 +24,7 @@ function [RV,IM,J,IMF] = remove_unreferenced(V,F)
   %   V(find(IM<=size(SV,1)),:) = V
   %
 %
-% Copyright (C) 2024, Danuser Lab - UTSouthwestern 
+% Copyright (C) 2025, Danuser Lab - UTSouthwestern 
 %
 % This file is part of Morphology3DPackage.
 % 

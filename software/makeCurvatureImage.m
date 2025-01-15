@@ -2,7 +2,7 @@ function curvatureImage = makeCurvatureImage(imageSize, surface, curvature, neig
 
 % makeCurvatureImage - generates an image where each pixel is the average curvature of the faces at that location
 %
-% Copyright (C) 2024, Danuser Lab - UTSouthwestern 
+% Copyright (C) 2025, Danuser Lab - UTSouthwestern 
 %
 % This file is part of Morphology3DPackage.
 % 

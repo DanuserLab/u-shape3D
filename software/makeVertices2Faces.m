@@ -2,7 +2,7 @@ function vertices2faces = makeVertices2Faces(surface)
 
 % makeVertices2Faces - Construct a list of vertices with the indices of the faces that intersect at each vertex
 %
-% Copyright (C) 2024, Danuser Lab - UTSouthwestern 
+% Copyright (C) 2025, Danuser Lab - UTSouthwestern 
 %
 % This file is part of Morphology3DPackage.
 % 

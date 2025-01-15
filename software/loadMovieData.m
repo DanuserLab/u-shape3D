@@ -2,7 +2,7 @@ function MD = loadMovieData(imagePath, outputDirectory, varargin)
 
 % load MovieData - initiates a movieData object if there is not one associated with the imagePath at the outputDirectory
 %
-% Copyright (C) 2024, Danuser Lab - UTSouthwestern 
+% Copyright (C) 2025, Danuser Lab - UTSouthwestern 
 %
 % This file is part of Morphology3DPackage.
 % 

@@ -2,7 +2,7 @@ function [meshHandle, figHandle] = plotMeshMD(directoryMD, varargin)
 
 % plotMeshMD - plots a 3D rendering of a surface image (requires that the mesh process have been run)
 %
-% Copyright (C) 2024, Danuser Lab - UTSouthwestern 
+% Copyright (C) 2025, Danuser Lab - UTSouthwestern 
 %
 % This file is part of Morphology3DPackage.
 % 

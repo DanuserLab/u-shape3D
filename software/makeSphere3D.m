@@ -2,7 +2,7 @@ function imageSphere = makeSphere3D(radius)
 
 % makeSphere3D - makes a 3D image of a sphere with the image sized to just fit the sphere
 %
-% Copyright (C) 2024, Danuser Lab - UTSouthwestern 
+% Copyright (C) 2025, Danuser Lab - UTSouthwestern 
 %
 % This file is part of Morphology3DPackage.
 % 

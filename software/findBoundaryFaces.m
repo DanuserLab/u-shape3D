@@ -2,7 +2,7 @@ function onBoundary = findBoundaryFaces(watersheds, neighbors, mode)
 
 % findBoundaryFaces - find the faces that are on the boundaries of watershed regions
 %
-% Copyright (C) 2024, Danuser Lab - UTSouthwestern 
+% Copyright (C) 2025, Danuser Lab - UTSouthwestern 
 %
 % This file is part of Morphology3DPackage.
 % 

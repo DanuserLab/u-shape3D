@@ -29,7 +29,7 @@ function writePOLY_triangle(varargin)
   % See also: png2objandtga, png2poly, writePOLY_tetgen
   %
 %
-% Copyright (C) 2024, Danuser Lab - UTSouthwestern 
+% Copyright (C) 2025, Danuser Lab - UTSouthwestern 
 %
 % This file is part of Morphology3DPackage.
 % 

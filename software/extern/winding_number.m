@@ -21,7 +21,7 @@ function [W] = winding_number(V,F,O,varargin)
   %  W  no by 1 list of winding numbers
   %
 %
-% Copyright (C) 2024, Danuser Lab - UTSouthwestern 
+% Copyright (C) 2025, Danuser Lab - UTSouthwestern 
 %
 % This file is part of Morphology3DPackage.
 % 

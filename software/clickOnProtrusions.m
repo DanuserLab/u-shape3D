@@ -42,7 +42,7 @@ function clickOnProtrusions(p)
 % mesh may be selected. This code has been successfully tested in Matlab 
 % 2017b and 2013b. 
 %
-% Copyright (C) 2024, Danuser Lab - UTSouthwestern 
+% Copyright (C) 2025, Danuser Lab - UTSouthwestern 
 %
 % This file is part of Morphology3DPackage.
 % 

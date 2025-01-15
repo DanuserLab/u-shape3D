@@ -14,7 +14,7 @@ function [S,C] = conncomp_gptbx(G)
 %  renamed by HMF Danuserlab2022 due to conflict with extern/geom2d package
 %  renamed from centroid_gptoolbox to centroid_gptbx to avoid CI build issue. 
 %
-% Copyright (C) 2024, Danuser Lab - UTSouthwestern 
+% Copyright (C) 2025, Danuser Lab - UTSouthwestern 
 %
 % This file is part of Morphology3DPackage.
 % 

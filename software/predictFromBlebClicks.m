@@ -2,7 +2,7 @@ function [label, score] = predictFromBlebClicks(clickedOnBlebs, clickedOnNotBleb
 
 % predictFromBlebClicks generates a label and an SVM like score list from the list of clicked on patches
 %
-% Copyright (C) 2024, Danuser Lab - UTSouthwestern 
+% Copyright (C) 2025, Danuser Lab - UTSouthwestern 
 %
 % This file is part of Morphology3DPackage.
 % 

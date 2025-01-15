@@ -2,7 +2,7 @@ function [face1, face2, face3] = breakFaceGraph(surface, f, face1, face2, face3)
 
 % breakFaceGraph - breaks badly connected fgraphs so that a more reasonable graph can be constructed (see findEdgesFaceGraph)
 %
-% Copyright (C) 2024, Danuser Lab - UTSouthwestern 
+% Copyright (C) 2025, Danuser Lab - UTSouthwestern 
 %
 % This file is part of Morphology3DPackage.
 % 

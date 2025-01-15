@@ -2,7 +2,7 @@ function meshColor = loadBlebSurfaceColor(MD, chan, frame, colorKey)
 
 % loadBlebSurfaceColor - loads the color of a mesh surface colored by bleb segmentation
 %
-% Copyright (C) 2024, Danuser Lab - UTSouthwestern 
+% Copyright (C) 2025, Danuser Lab - UTSouthwestern 
 %
 % This file is part of Morphology3DPackage.
 % 

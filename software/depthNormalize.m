@@ -2,7 +2,7 @@ function dnImage = depthNormalize(image3D, image3DMask)
 
 % depthNormalize - normalizes each pixel by the mean intensity at that distance from the mesh
 %
-% Copyright (C) 2024, Danuser Lab - UTSouthwestern 
+% Copyright (C) 2025, Danuser Lab - UTSouthwestern 
 %
 % This file is part of Morphology3DPackage.
 % 

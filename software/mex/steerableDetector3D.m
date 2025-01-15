@@ -21,7 +21,7 @@
 % For more information, see:
 % F. Aguet et al., IEEE Proc. ICIP'05, pp. II 1158-1161, 2005.
 %
-% Copyright (C) 2024, Danuser Lab - UTSouthwestern 
+% Copyright (C) 2025, Danuser Lab - UTSouthwestern 
 %
 % This file is part of Morphology3DPackage.
 % 

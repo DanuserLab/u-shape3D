@@ -2,7 +2,7 @@ function edgeList = findEdgesFaceGraph(surface)
 
 % findEdgesFaceGraph - Construct an edge list for the dual graph of the mesh with the faces as nodes
 %
-% Copyright (C) 2024, Danuser Lab - UTSouthwestern 
+% Copyright (C) 2025, Danuser Lab - UTSouthwestern 
 %
 % This file is part of Morphology3DPackage.
 % 

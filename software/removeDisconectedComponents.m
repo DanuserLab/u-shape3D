@@ -2,7 +2,7 @@ function image3D = removeDisconectedComponents(image3D, level)
 
 % removeDisconnectedComponents - zeros all but the largest connected component in a 3D image that is above the provided threshold
 %
-% Copyright (C) 2024, Danuser Lab - UTSouthwestern 
+% Copyright (C) 2025, Danuser Lab - UTSouthwestern 
 %
 % This file is part of Morphology3DPackage.
 % 

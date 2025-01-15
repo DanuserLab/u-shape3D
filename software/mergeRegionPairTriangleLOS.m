@@ -2,7 +2,7 @@ function [watersheds, watershedGraph, edgesToCheck, closureSurfaceArea] = mergeR
 
 % mergeRegionPairTriangleLOS - merges a pair of regions and updates structures needed for merging according to the triangle and LOS rules (specific to Morphology3D)
 %
-% Copyright (C) 2024, Danuser Lab - UTSouthwestern 
+% Copyright (C) 2025, Danuser Lab - UTSouthwestern 
 %
 % This file is part of Morphology3DPackage.
 % 
