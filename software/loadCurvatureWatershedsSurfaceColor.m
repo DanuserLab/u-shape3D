@@ -21,7 +21,7 @@ function meshColor = loadCurvatureWatershedsSurfaceColor(MD, chan, frame, colorK
 % 
 % 
 %
-% Copyright (C) 2025, Danuser Lab - UTSouthwestern 
+% Copyright (C) 2026, Danuser Lab - UTSouthwestern 
 %
 % This file is part of Morphology3DPackage.
 % 

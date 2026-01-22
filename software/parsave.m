@@ -3,7 +3,7 @@ function parsave(fileName,varargin)
 % parsave - saves workspace variables even inside a parfor loop
 % (modified from a Mathworks blog)
 %
-% Copyright (C) 2025, Danuser Lab - UTSouthwestern 
+% Copyright (C) 2026, Danuser Lab - UTSouthwestern 
 %
 % This file is part of Morphology3DPackage.
 % 

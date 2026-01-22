@@ -50,7 +50,7 @@ function [VV,FF,FO] = upsample(V,F,varargin)
   % Copyright 2011, Alec Jacobson (jacobson@inf.ethz.ch)
   %
 %
-% Copyright (C) 2025, Danuser Lab - UTSouthwestern 
+% Copyright (C) 2026, Danuser Lab - UTSouthwestern 
 %
 % This file is part of Morphology3DPackage.
 % 

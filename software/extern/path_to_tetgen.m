@@ -6,7 +6,7 @@ function s = path_to_tetgen()
   %  
   % See also: tetgen
 %
-% Copyright (C) 2025, Danuser Lab - UTSouthwestern 
+% Copyright (C) 2026, Danuser Lab - UTSouthwestern 
 %
 % This file is part of Morphology3DPackage.
 % 

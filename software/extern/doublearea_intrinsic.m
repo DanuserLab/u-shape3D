@@ -11,7 +11,7 @@ function dblA = doublearea_intrinsic(l)
   % Copyright 2011, Alec Jacobson (jacobson@inf.ethz.ch), and Daniele Panozzo
   %
 %
-% Copyright (C) 2025, Danuser Lab - UTSouthwestern 
+% Copyright (C) 2026, Danuser Lab - UTSouthwestern 
 %
 % This file is part of Morphology3DPackage.
 % 
